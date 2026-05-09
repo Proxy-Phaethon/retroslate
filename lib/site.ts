@@ -6,9 +6,26 @@ export const palette = {
 
 export const company = {
   name: "Retroslate",
+  legalName: "RetroSlate Co.",
   domain: "retroslate.com",
   email: "ziahawwa@retroslate.com",
+  phone: "+91 9496050818",
 } as const;
+
+export const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/retroslate",
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/retroslateco",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Proxy-Phaethon",
+  },
+] as const;
 
 export const navItems = [
   { label: "Home", href: "/home" },
