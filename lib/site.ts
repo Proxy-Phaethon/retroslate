@@ -11,7 +11,6 @@ export const company = {
 } as const;
 
 export const navItems = [
-  { label: "Landing", href: "/" },
   { label: "Home", href: "/home" },
   { label: "Products & Services", href: "/products-services" },
   { label: "About", href: "/about" },
