@@ -1,0 +1,78 @@
+:root {
+  --void: #23212c;
+  --wine: #7f011f;
+  --milk: #f8f5f2;
+  --surface: var(--void);
+  --text: var(--milk);
+  --accent: var(--wine);
+  --muted: color-mix(in srgb, var(--milk) 68%, var(--void));
+  --line: color-mix(in srgb, var(--milk) 18%, transparent);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --surface: var(--milk);
+  --text: var(--void);
+  --muted: color-mix(in srgb, var(--void) 72%, var(--milk));
+  --line: color-mix(in srgb, var(--void) 16%, transparent);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--surface);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: "Courier Prime", Courier, "Courier New", monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+main {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--milk);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: var(--muted);
+}
