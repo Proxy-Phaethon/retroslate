@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Courier_Prime } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 import "./shell.css";
 
-const jetbrainsMono = JetBrains_Mono({
+const courierPrime = Courier_Prime({
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" className="snap-doc">
-      <body className={jetbrainsMono.className}>
+      <body className={courierPrime.className}>
         <SiteHeader />
         {children}
       </body>
