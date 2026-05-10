@@ -1,6 +1,6 @@
 import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
 import { PageFrame } from "@/components/page-frame";
-import { company, socialLinks } from "@/lib/site";
+import { company, formRecipientEmail, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
 
 const testimonials = [
@@ -155,7 +155,7 @@ export default function HomePage() {
               </div>
 
               <form
-                action={`https://formsubmit.co/${company.email}`}
+                action={`https://formsubmit.co/${encodeURIComponent(formRecipientEmail)}`}
                 className={styles.contactForm}
                 method="POST"
               >

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
-import { company, socialLinks } from "@/lib/site";
+import { company, formRecipientEmail, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
 
 const landingServices = [
@@ -113,7 +113,7 @@ export default function LandingPage() {
           </div>
 
           <form
-            action={`https://formsubmit.co/${company.email}`}
+            action={`https://formsubmit.co/${encodeURIComponent(formRecipientEmail)}`}
             className={styles.contactForm}
             method="POST"
           >

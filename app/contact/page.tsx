@@ -1,5 +1,5 @@
 import { PageFrame } from "@/components/page-frame";
-import { company, socialLinks } from "@/lib/site";
+import { company, formRecipientEmail, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
 
 export default function ContactPage() {
@@ -38,7 +38,7 @@ export default function ContactPage() {
 
         <div className={styles.formColumn}>
           <form
-            action={`https://formsubmit.co/${company.email}`}
+            action={`https://formsubmit.co/${encodeURIComponent(formRecipientEmail)}`}
             className={styles.form}
             method="POST"
           >

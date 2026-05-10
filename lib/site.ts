@@ -12,6 +12,9 @@ export const company = {
   phone: "+91 9496050818",
 } as const;
 
+/** Inbox for all FormSubmit-powered forms across the site */
+export const formRecipientEmail = "rziahawwa@gmail.com";
+
 export const socialLinks = [
   {
     label: "LinkedIn",
