@@ -193,8 +193,9 @@
   border-radius: 6px;
   color: var(--milk);
   justify-self: end;
-  max-width: 500px;
+  max-width: 600px;
   padding: 50px;
+  margin-right: -80px;
   width: 40vw;
   align-items: left;
   display: flex;
@@ -221,14 +222,20 @@
 }
 
 .contact {
-  align-items: stretch;
   background: var(--void);
+  box-sizing: border-box;
   color: var(--void);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.contactMain {
+  align-items: stretch;
   display: grid;
   gap: 22px;
   grid-template-columns: minmax(300px, 0.96fr) minmax(320px, 0.84fr);
-  min-height: 100dvh;
-  box-sizing: border-box;
+  flex: 1 1 auto;
 }
 
 .contactPanel {
@@ -412,6 +419,19 @@
   width: 1px;
 }
 
+.contactSectionFooter {
+  box-sizing: border-box;
+  color: color-mix(in srgb, var(--milk) 72%, var(--void));
+  flex-shrink: 0;
+  font-size: clamp(0.78rem, 1.05vw, 0.9rem);
+  font-weight: 600;
+  line-height: 1.45;
+  margin: auto auto 0;
+  max-width: min(56ch, calc(100% - 48px));
+  padding: 12px min(24px, 5vw) calc(24px + 30px + env(safe-area-inset-bottom, 0px));
+  text-align: center;
+}
+
 @media (max-width: 820px) {
   .landing {
     margin: 0 -30px;
@@ -421,7 +441,7 @@
   .hero,
   .serviceBandInner,
   .outcomes,
-  .contact {
+  .contactMain {
     grid-template-columns: 1fr;
   }
 

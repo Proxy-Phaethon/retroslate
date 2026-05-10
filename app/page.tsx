@@ -89,6 +89,7 @@ export default function LandingPage() {
           className={`${styles.contact} snap-section snap-section--screen`}
           aria-labelledby="contact-title"
         >
+          <div className={styles.contactMain}>
           <div className={styles.contactPanel}>
             <p className={styles.panelBrand}>{company.legalName}</p>
             <h2 id="contact-title">Let&apos;s build something useful.</h2>
@@ -159,6 +160,12 @@ export default function LandingPage() {
               passwords or sensitive data.
             </p>
           </form>
+          </div>
+
+          <p className={styles.contactSectionFooter}>
+            RetroSlate &copy; Websites, systems, and support built to move with
+            your business. 2026
+          </p>
         </section>
       </main>
     </>
