@@ -1,7 +1,7 @@
 export const palette = {
-  void: "#23212c",
-  wine: "#7f011f",
-  milk: "#f8f5f2",
+  void: "#1b1b21",
+  wine: "#8e0b23",
+  milk: "#f2f0ed",
 } as const;
 
 export const company = {

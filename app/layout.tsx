@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "./shell.css";
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -19,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" className="snap-doc">
-      <body>{children}</body>
+      <body className={jetbrainsMono.className}>{children}</body>
     </html>
   );
 }

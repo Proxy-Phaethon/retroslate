@@ -1,7 +1,7 @@
 :root {
-  --void: #23212c;
-  --wine: #7f011f;
-  --milk: #f8f5f2;
+  --void: #1b1b21;
+  --wine: #8e0b23;
+  --milk: #f2f0ed;
   --surface: var(--void);
   --text: var(--milk);
   --accent: var(--wine);
@@ -33,11 +33,19 @@ html {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
   }
+
+  html.snap-doc.snap-doc--mandatory {
+    scroll-snap-type: y mandatory;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html.snap-doc {
     scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+
+  html.snap-doc.snap-doc--mandatory {
     scroll-snap-type: none;
   }
 }
@@ -58,7 +66,6 @@ body {
   background: var(--surface);
   color: var(--text);
   padding: 30px;
-  font-family: "Courier Prime", Courier, "Courier New", monospace;
 }
 
 a {
