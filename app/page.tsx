@@ -5,7 +5,10 @@ import styles from "./page.module.css";
 export default function LandingPage() {
   return (
     <main className={styles.landing}>
-      <section className={styles.hero} aria-labelledby="landing-title">
+      <section
+        className={`${styles.hero} snap-section snap-section--screen`}
+        aria-labelledby="landing-title"
+      >
         <Link className={styles.brand} href="/" aria-label="Retroslate home">
           {company.legalName}
         </Link>
@@ -20,13 +23,13 @@ export default function LandingPage() {
             A remote-first digital studio crafting websites, tools, and software
             for businesses and creators worldwide.
           </p>
-          <Link className={styles.primaryButton} href="/products-services">
+          <Link className={styles.primaryButton} href="/services">
             Start a Project
           </Link>
         </div>
       </section>
 
-      <section className={styles.services} aria-label="Core services">
+      <section className={`${styles.services} snap-section snap-section--screen`} aria-label="Core services">
         <article>
           <h2>Web Development</h2>
           <p>Fast, responsive websites built for performance and clarity.</p>
@@ -45,7 +48,10 @@ export default function LandingPage() {
         </article>
       </section>
 
-      <section className={styles.outcomes} aria-labelledby="outcomes-title">
+      <section
+        className={`${styles.outcomes} snap-section snap-section--screen`}
+        aria-labelledby="outcomes-title"
+      >
         <div className={styles.outcomesCopy}>
           <p>We focus on shipping usable products, not just designs or ideas.</p>
           <h2 id="outcomes-title">Real work. Real outcomes.</h2>
@@ -67,7 +73,10 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className={styles.contact} aria-labelledby="contact-title">
+      <section
+        className={`${styles.contact} snap-section snap-section--screen`}
+        aria-labelledby="contact-title"
+      >
         <div className={styles.contactPanel}>
           <p className={styles.panelBrand}>{company.legalName}</p>
           <h2 id="contact-title">Let&apos;s build something useful.</h2>

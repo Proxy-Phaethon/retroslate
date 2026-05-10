@@ -10,7 +10,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
   grid-template-rows: auto 1fr;
   gap: 72px 48px;
-  min-height: 625px;
+  min-height: 100dvh;
   padding: 36px 34px 96px;
 }
 
@@ -116,7 +116,7 @@
   display: grid;
   gap: 48px;
   grid-template-columns: minmax(290px, 0.9fr) minmax(320px, 0.8fr);
-  min-height: 560px;
+  min-height: 100dvh;
   padding: 88px 56px 72px;
 }
 

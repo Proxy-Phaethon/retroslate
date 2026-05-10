@@ -29,17 +29,26 @@ export const socialLinks = [
 
 export const navItems = [
   { label: "Home", href: "/home" },
-  { label: "Products & Services", href: "/products-services" },
   { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
-export const productsAndServices = [
+export const services = [
+  {
+    name: "Web Development Services",
+    summary:
+      "Strategy, design, development, deployment, maintenance, and adjacent website services.",
+  },
   {
     name: "Retroslate Portfolios",
     summary:
       "Free hosted portfolios at retroslate.com/username, with paid design and deployment services available.",
   },
+] as const;
+
+export const products = [
   {
     name: "Rearview",
     summary:
@@ -49,11 +58,6 @@ export const productsAndServices = [
     name: "Slate",
     summary:
       "A mobile app planned around extreme high-security features, with details to follow.",
-  },
-  {
-    name: "Web Development Services",
-    summary:
-      "Strategy, design, development, deployment, maintenance, and adjacent website services.",
   },
 ] as const;
 
