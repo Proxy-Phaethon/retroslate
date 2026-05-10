@@ -35,19 +35,6 @@ export const navItems = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-export const products = [
-  {
-    name: "Rearview",
-    summary:
-      "An open-source desktop app for dual-monitor workflows across macOS and Windows.",
-  },
-  {
-    name: "Slate",
-    summary:
-      "A mobile app planned around extreme high-security features, with details to follow.",
-  },
-] as const;
-
 export const teamMembers = [
   {
     name: "Ziah Awwa",
