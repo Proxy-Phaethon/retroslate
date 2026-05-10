@@ -130,6 +130,7 @@
   align-items: center;
   justify-content: flex-end;
   padding: 48px min(40px, 5vw);
+  margin-right: 80px;
 }
 
 .ctaInner {
