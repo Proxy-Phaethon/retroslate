@@ -41,7 +41,7 @@
 }
 
 .heroTitleBlock {
-  align-self: end;
+  align-self: start;
   grid-column: 1;
   grid-row: 2;
 }
@@ -97,13 +97,29 @@
   filter: brightness(1.08);
 }
 
-.serviceBand {
-  border-top: 1px solid color-mix(in srgb, var(--milk) 44%, transparent);
+.services {
   display: flex;
+  flex-direction: column;
+  min-height: 85dvh;
+  padding: 0 min(34px, 5vw);
+}
+
+.servicesInner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1120px;
+  width: 100%;
+}
+
+.serviceRow {
   align-items: center;
-  justify-content: center;
-  min-height: 100dvh;
-  padding: 48px min(34px, 5vw);
+  border-bottom: 1px solid color-mix(in srgb, var(--milk) 44%, transparent);
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: clamp(16px, 2.5dvh, 28px) 0;
 }
 
 .serviceBandInner {
@@ -115,7 +131,7 @@
   align-items: center;
 }
 
-.serviceBand h2 {
+.services h2 {
   font-size: clamp(1.8rem, 3vw, 2.45rem);
   font-weight: 400;
   line-height: 1.03;
@@ -123,7 +139,7 @@
   max-width: 380px;
 }
 
-.serviceBand p {
+.services p {
   color: color-mix(in srgb, var(--milk) 76%, var(--void));
   font-size: clamp(1rem, 1.45vw, 1.32rem);
   font-weight: 700;
@@ -155,7 +171,7 @@
 
 .outcomesCopy p {
   color: color-mix(in srgb, var(--milk) 78%, var(--void));
-  font-size: clamp(1rem, 1.32vw, 1.2rem);
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.35;
   margin: 0;
@@ -164,11 +180,11 @@
 
 .outcomesCopy h2 {
   color: var(--wine);
-  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  font-size: 50px;
   font-weight: 700;
   line-height: 1.05;
   margin: 0;
-  max-width: 380px;
+  max-width: 500px;
 }
 
 .statsCard {
@@ -177,9 +193,13 @@
   border-radius: 6px;
   color: var(--milk);
   justify-self: end;
-  max-width: 460px;
-  padding: 56px 42px 44px;
-  width: 100%;
+  max-width: 500px;
+  padding: 50px;
+  width: 40vw;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .statsCard p {
@@ -202,18 +222,18 @@
 
 .contact {
   align-items: stretch;
-  background: var(--milk);
+  background: var(--void);
   color: var(--void);
   display: grid;
   gap: 22px;
   grid-template-columns: minmax(300px, 0.96fr) minmax(320px, 0.84fr);
   min-height: 100dvh;
-  padding: 34px min(40px, 4vw) 34px 0;
   box-sizing: border-box;
 }
 
 .contactPanel {
-  align-self: center;
+  align-self: left;
+    margin-bottom: 80px;
   background: var(--milk);
   border-radius: 0 36px 36px 0;
   color: var(--void);
@@ -275,7 +295,8 @@
 }
 
 .contactForm {
-  align-self: center;
+  align-self: right;
+  margin-bottom: 80px;
   background: var(--wine);
   border-radius: 12px;
   color: var(--milk);
@@ -283,7 +304,7 @@
   flex-direction: column;
   gap: 22px;
   padding: 28px 28px 24px;
-  max-width: 520px;
+  max-width: 650px;
   width: 100%;
 }
 
@@ -427,7 +448,7 @@
   }
 
   .heroPitch p,
-  .serviceBand p {
+  .services p {
     justify-self: start;
     text-align: left;
   }
@@ -436,8 +457,12 @@
     align-self: flex-start;
   }
 
-  .serviceBand {
-    padding: 40px 22px;
+  .services {
+    padding: 0 22px;
+  }
+
+  .serviceRow {
+    padding: 20px 0;
   }
 
   .serviceBandInner {

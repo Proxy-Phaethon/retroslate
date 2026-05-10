@@ -52,18 +52,21 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {landingServices.map((item) => (
-          <section
-            key={item.title}
-            className={`${styles.serviceBand} snap-section snap-section--screen`}
-            aria-label={item.title}
-          >
-            <div className={styles.serviceBandInner}>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-            </div>
-          </section>
-        ))}
+        <section
+          className={`${styles.services} snap-section snap-section--screen`}
+          aria-label="Core services"
+        >
+          <div className={styles.servicesInner}>
+            {landingServices.map((item) => (
+              <div key={item.title} className={styles.serviceRow}>
+                <div className={styles.serviceBandInner}>
+                  <h2>{item.title}</h2>
+                  <p>{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <section
           className={`${styles.outcomes} snap-section snap-section--screen`}
