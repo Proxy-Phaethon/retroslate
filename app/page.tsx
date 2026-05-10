@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LandingSnap } from "@/components/landing-snap";
+import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
 import { company, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
 
@@ -26,7 +26,7 @@ const landingServices = [
 export default function LandingPage() {
   return (
     <>
-      <LandingSnap />
+      <MandatorySectionSnap />
       <main className={styles.landing}>
         <section
           className={`${styles.hero} snap-section snap-section--screen`}

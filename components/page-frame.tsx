@@ -1,12 +1,16 @@
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 
-export function PageFrame({ children }: { children: React.ReactNode }) {
+export function PageFrame({
+  children,
+  showFooter = true,
+}: {
+  children: React.ReactNode;
+  showFooter?: boolean;
+}) {
   return (
     <>
-      <SiteHeader />
       {children}
-      <SiteFooter />
+      {showFooter ? <SiteFooter /> : null}
     </>
   );
 }

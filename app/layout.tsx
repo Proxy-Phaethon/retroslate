@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 import "./shell.css";
 
@@ -25,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" className="snap-doc">
-      <body className={jetbrainsMono.className}>{children}</body>
+      <body className={jetbrainsMono.className}>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }

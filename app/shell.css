@@ -1,4 +1,8 @@
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
   border-bottom: 1px solid var(--line);
 }
 
@@ -22,11 +26,21 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 16px;
-  color: var(--muted);
   font-size: 0.9rem;
 }
 
-.nav a:hover,
+.nav-link {
+  color: var(--milk);
+}
+
+.nav-link:hover {
+  color: var(--wine);
+}
+
+.nav-link[data-active="true"] {
+  color: var(--wine);
+}
+
 .site-footer a:hover {
   color: var(--text);
 }

@@ -3,9 +3,10 @@
 import { useEffect } from "react";
 
 /**
- * Landing uses scroll-snap mandatory; other routes keep proximity snap from layout.
+ * Full-page section routes: mandatory vertical snap while mounted.
+ * Other routes keep proximity snap from the root layout.
  */
-export function LandingSnap() {
+export function MandatorySectionSnap() {
   useEffect(() => {
     const el = document.documentElement;
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");

@@ -5,7 +5,7 @@ export const palette = {
 } as const;
 
 export const company = {
-  name: "Retroslate",
+  name: "RetroSlate",
   legalName: "RetroSlate Co.",
   domain: "retroslate.com",
   email: "ziahawwa@retroslate.com",

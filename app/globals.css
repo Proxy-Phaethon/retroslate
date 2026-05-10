@@ -1,4 +1,5 @@
 :root {
+  --header-sticky-offset: 80px;
   --void: #1b1b21;
   --wine: #8e0b23;
   --milk: #f2f0ed;
@@ -32,6 +33,7 @@ html {
   html.snap-doc {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
+    scroll-padding-top: var(--header-sticky-offset);
   }
 
   html.snap-doc.snap-doc--mandatory {
@@ -108,4 +110,10 @@ main {
 
 .muted {
   color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --header-sticky-offset: 128px;
+  }
 }
