@@ -35,19 +35,6 @@ export const navItems = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-export const services = [
-  {
-    name: "Web Development Services",
-    summary:
-      "Strategy, design, development, deployment, maintenance, and adjacent website services.",
-  },
-  {
-    name: "Retroslate Portfolios",
-    summary:
-      "Free hosted portfolios at retroslate.com/username, with paid design and deployment services available.",
-  },
-] as const;
-
 export const products = [
   {
     name: "Rearview",
