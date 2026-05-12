@@ -1,4 +1,3 @@
-import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
 import { PageFrame } from "@/components/page-frame";
 import { company, formRecipientEmail, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
@@ -47,12 +46,10 @@ const whyPoints = [
 
 export default function HomePage() {
   return (
-    <>
-      <MandatorySectionSnap />
-      <PageFrame showFooter={false}>
-        <main className={styles.home}>
+    <PageFrame>
+      <main className={styles.home}>
           <section
-            className={`${styles.hero} snap-section snap-section--screen`}
+            className={styles.hero}
             aria-labelledby="home-hero-title"
           >
             <div className={styles.heroInner}>
@@ -87,7 +84,7 @@ export default function HomePage() {
           </section>
 
           <section
-            className={`${styles.featured} snap-section snap-section--screen`}
+            className={styles.featured}
             aria-labelledby="featured-title"
           >
             <div className={styles.featuredInner}>
@@ -108,7 +105,7 @@ export default function HomePage() {
           </section>
 
           <section
-            className={`${styles.why} snap-section snap-section--screen`}
+            className={styles.why}
             aria-labelledby="why-title"
           >
             <div className={styles.whyInner}>
@@ -125,7 +122,7 @@ export default function HomePage() {
           </section>
 
           <section
-            className={`${styles.contact} snap-section snap-section--screen`}
+            className={styles.contact}
             aria-labelledby="home-contact-title"
           >
             <div className={styles.contactInner}>
@@ -199,8 +196,7 @@ export default function HomePage() {
               </form>
             </div>
           </section>
-        </main>
-      </PageFrame>
-    </>
+      </main>
+    </PageFrame>
   );
 }

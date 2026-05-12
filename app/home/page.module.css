@@ -2,14 +2,12 @@
   background: var(--void);
   color: var(--milk);
   color-scheme: dark;
-  margin: 0 -30px;
-  width: calc(100% + 60px);
-  max-width: 100vw;
+  max-width: 100%;
   overflow-x: clip;
 }
 
 .hero {
-  min-height: 100dvh;
+  min-height: auto;
   display: flex;
   align-items: center;
   padding: 48px min(40px, 5vw) 64px;
@@ -92,7 +90,7 @@
 }
 
 .featured {
-  min-height: 100dvh;
+  min-height: auto;
   display: flex;
   align-items: center;
   padding: 56px min(40px, 5vw);
@@ -152,7 +150,7 @@
 }
 
 .why {
-  min-height: 100dvh;
+  min-height: auto;
   display: flex;
   align-items: center;
   padding: 56px min(40px, 5vw);
@@ -213,7 +211,7 @@
   background: #ffffff;
   color: var(--void);
   color-scheme: light;
-  min-height: 100dvh;
+  min-height: auto;
   display: flex;
   align-items: center;
   padding: 48px min(40px, 5vw);

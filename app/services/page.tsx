@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
 import { PageFrame } from "@/components/page-frame";
 import styles from "./page.module.css";
 
@@ -130,12 +129,10 @@ const serviceCards: readonly ServiceCard[] = [
 
 export default function ServicesPage() {
   return (
-    <>
-      <MandatorySectionSnap />
-      <PageFrame>
+    <PageFrame>
         <main className={styles.servicesPage}>
           <section
-            className={`${styles.intro} snap-section snap-section--screen`}
+            className={styles.intro}
             aria-labelledby="services-intro-title"
           >
             <div className={styles.introInner}>
@@ -182,7 +179,7 @@ export default function ServicesPage() {
           </section>
 
           <section
-            className={`${styles.gridSection} snap-section snap-section--screen`}
+            className={styles.gridSection}
             aria-label="Service offerings"
           >
             <div className={styles.gridInner}>
@@ -217,7 +214,7 @@ export default function ServicesPage() {
           </section>
 
           <section
-            className={`${styles.cta} snap-section snap-section--screen`}
+            className={styles.cta}
             aria-labelledby="services-cta-title"
           >
             <div className={styles.ctaInner}>
@@ -237,7 +234,6 @@ export default function ServicesPage() {
             </div>
           </section>
         </main>
-      </PageFrame>
-    </>
+    </PageFrame>
   );
 }

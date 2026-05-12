@@ -35,46 +35,11 @@ html {
   background: var(--surface);
 }
 
-/* Section snap scrolling (see html.snap-doc in layout) */
-@media (prefers-reduced-motion: no-preference) {
-  html.snap-doc {
-    scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
-    scroll-padding-top: var(--header-sticky-offset);
-  }
-
-  html.snap-doc.snap-doc--mandatory {
-    scroll-snap-type: y mandatory;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.snap-doc {
-    scroll-behavior: auto;
-    scroll-snap-type: none;
-  }
-
-  html.snap-doc.snap-doc--mandatory {
-    scroll-snap-type: none;
-  }
-}
-
-.snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
-}
-
-.snap-section--screen {
-  min-height: 100dvh;
-  box-sizing: border-box;
-}
-
 body {
   min-height: 100vh;
   margin: 0;
   background: var(--surface);
   color: var(--text);
-  padding: 30px;
 }
 
 a {

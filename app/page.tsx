@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { LandingScrollMode } from "@/components/landing-scroll-mode";
 import { PageFrame } from "@/components/page-frame";
 import { company, formRecipientEmail, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
@@ -27,10 +26,9 @@ const landingServices = [
 export default function LandingPage() {
   return (
     <PageFrame>
-      <LandingScrollMode />
       <main className={styles.landing}>
         <section
-          className={`${styles.hero} snap-section snap-section--screen`}
+          className={styles.hero}
           aria-labelledby="landing-title"
         >
           <Link className={styles.brand} href="/" aria-label="Retroslate home">
@@ -54,7 +52,7 @@ export default function LandingPage() {
         </section>
 
         <section
-          className={`${styles.services} snap-section snap-section--screen`}
+          className={styles.services}
           aria-label="Core services"
         >
           <div className={styles.servicesInner}>
@@ -70,7 +68,7 @@ export default function LandingPage() {
         </section>
 
         <section
-          className={`${styles.outcomes} snap-section snap-section--screen`}
+          className={styles.outcomes}
           aria-labelledby="outcomes-title"
         >
           <div className={styles.outcomesCopy}>
@@ -87,7 +85,7 @@ export default function LandingPage() {
         </section>
 
         <section
-          className={`${styles.contact} snap-section`}
+          className={styles.contact}
           aria-labelledby="contact-title"
         >
           <div className={styles.contactMain}>
@@ -162,11 +160,6 @@ export default function LandingPage() {
             </p>
           </form>
           </div>
-
-          <p className={styles.contactSectionFooter}>
-            RetroSlate &copy; Websites, systems, and support built to move with
-            your business. 2026
-          </p>
         </section>
       </main>
     </PageFrame>

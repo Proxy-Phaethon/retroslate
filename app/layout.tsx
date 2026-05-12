@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" className="snap-doc">
+    <html lang="en" data-theme="dark">
       <body className={courierPrime.className}>
         <SiteHeader />
         {children}

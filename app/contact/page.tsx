@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 
 export default function ContactPage() {
   return (
-    <PageFrame showFooter={false}>
+    <PageFrame>
       <main className={styles.contactPage}>
         <div className={styles.panel}>
           <div className={styles.panelCopy}>

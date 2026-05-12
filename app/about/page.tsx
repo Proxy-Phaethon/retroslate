@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
 import { PageFrame } from "@/components/page-frame";
 import styles from "./page.module.css";
 
@@ -29,12 +28,10 @@ const focusAreas = [
 
 export default function AboutPage() {
   return (
-    <>
-      <MandatorySectionSnap />
-      <PageFrame>
+    <PageFrame>
         <main className={styles.about}>
           <section
-            className={`${styles.hero} snap-section snap-section--screen`}
+            className={styles.hero}
             aria-labelledby="about-hero-title"
           >
             <div className={styles.heroInner}>
@@ -53,7 +50,7 @@ export default function AboutPage() {
           </section>
 
           <section
-            className={`${styles.section} snap-section snap-section--screen`}
+            className={styles.section}
             aria-labelledby="started-title"
           >
             <div className={styles.sectionInner}>
@@ -80,7 +77,7 @@ export default function AboutPage() {
           </section>
 
           <section
-            className={`${styles.section} snap-section snap-section--screen`}
+            className={styles.section}
             aria-labelledby="believe-title"
           >
             <div className={styles.sectionInner}>
@@ -95,7 +92,7 @@ export default function AboutPage() {
           </section>
 
           <section
-            className={`${styles.section} snap-section snap-section--screen`}
+            className={styles.section}
             aria-labelledby="remote-title"
           >
             <div className={styles.sectionInner}>
@@ -117,7 +114,7 @@ export default function AboutPage() {
           </section>
 
           <section
-            className={`${styles.section} snap-section snap-section--screen`}
+            className={styles.section}
             aria-labelledby="focus-title"
           >
             <div className={styles.sectionInner}>
@@ -131,7 +128,7 @@ export default function AboutPage() {
           </section>
 
           <section
-            className={`${styles.section} snap-section snap-section--screen`}
+            className={styles.section}
             aria-labelledby="people-title"
           >
             <div className={styles.sectionInner}>
@@ -153,7 +150,7 @@ export default function AboutPage() {
           </section>
 
           <section
-            className={`${styles.cta} snap-section snap-section--screen`}
+            className={styles.cta}
             aria-labelledby="about-cta-title"
           >
             <div className={styles.ctaInner}>
@@ -168,7 +165,6 @@ export default function AboutPage() {
             </div>
           </section>
         </main>
-      </PageFrame>
-    </>
+    </PageFrame>
   );
 }

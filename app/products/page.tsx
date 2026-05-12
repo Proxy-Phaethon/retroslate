@@ -1,16 +1,13 @@
 import Link from "next/link";
-import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
 import { PageFrame } from "@/components/page-frame";
 import styles from "./page.module.css";
 
 export default function ProductsPage() {
   return (
-    <>
-      <MandatorySectionSnap />
-      <PageFrame>
+    <PageFrame>
         <main className={styles.productsPage}>
           <section
-            className={`${styles.hero} snap-section snap-section--screen`}
+            className={styles.hero}
             aria-labelledby="products-hero-title"
           >
             <div className={styles.heroInner}>
@@ -26,7 +23,7 @@ export default function ProductsPage() {
           </section>
 
           <section
-            className={`${styles.productSection} snap-section snap-section--screen`}
+            className={styles.productSection}
             aria-labelledby="hosting-title"
           >
             <div className={styles.sectionInner}>
@@ -64,7 +61,7 @@ export default function ProductsPage() {
           </section>
 
           <section
-            className={`${styles.productSection} snap-section snap-section--screen`}
+            className={styles.productSection}
             aria-labelledby="rearview-title"
           >
             <div className={styles.sectionInner}>
@@ -105,7 +102,7 @@ export default function ProductsPage() {
           </section>
 
           <section
-            className={`${styles.productSection} snap-section snap-section--screen`}
+            className={styles.productSection}
             aria-labelledby="slate-title"
           >
             <div className={styles.sectionInner}>
@@ -148,7 +145,7 @@ export default function ProductsPage() {
           </section>
 
           <section
-            className={`${styles.future} snap-section snap-section--screen`}
+            className={styles.future}
             aria-labelledby="future-title"
           >
             <div className={styles.sectionInner}>
@@ -168,7 +165,6 @@ export default function ProductsPage() {
             </div>
           </section>
         </main>
-      </PageFrame>
-    </>
+    </PageFrame>
   );
 }
