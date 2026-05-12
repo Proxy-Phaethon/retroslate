@@ -13,7 +13,31 @@ export const company = {
 } as const;
 
 /** Inbox for all FormSubmit-powered forms across the site */
-export const formRecipientEmail = "rziahawwa@gmail.com";
+export const formRecipientEmail = "ziahawwa@retroslate.com";
+
+export const commitmentLinks = [
+  { label: "Work-life balance", href: "/company-commitments/work-life-balance" },
+  {
+    label: "Career growth and learning",
+    href: "/company-commitments/career-growth-learning",
+  },
+  {
+    label: "Diversity, equity, and inclusion (DEI)",
+    href: "/company-commitments/diversity-equity-inclusion",
+  },
+  {
+    label: "Environmental sustainability",
+    href: "/company-commitments/environmental-sustainability",
+  },
+  { label: "Social impact", href: "/company-commitments/social-impact" },
+] as const;
+
+export const charityLinks = [
+  { label: "Education Access", href: "/non-profits/education-access" },
+  { label: "Digital Literacy", href: "/non-profits/digital-literacy" },
+  { label: "Climate Action", href: "/non-profits/climate-action" },
+  { label: "Community Care", href: "/non-profits/community-care" },
+] as const;
 
 export const socialLinks = [
   {

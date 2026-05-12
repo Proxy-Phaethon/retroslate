@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MandatorySectionSnap } from "@/components/mandatory-section-snap";
+import { LandingScrollMode } from "@/components/landing-scroll-mode";
+import { PageFrame } from "@/components/page-frame";
 import { company, formRecipientEmail, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
 
@@ -25,8 +26,8 @@ const landingServices = [
 
 export default function LandingPage() {
   return (
-    <>
-      <MandatorySectionSnap />
+    <PageFrame>
+      <LandingScrollMode />
       <main className={styles.landing}>
         <section
           className={`${styles.hero} snap-section snap-section--screen`}
@@ -86,7 +87,7 @@ export default function LandingPage() {
         </section>
 
         <section
-          className={`${styles.contact} snap-section snap-section--screen`}
+          className={`${styles.contact} snap-section`}
           aria-labelledby="contact-title"
         >
           <div className={styles.contactMain}>
@@ -168,6 +169,6 @@ export default function LandingPage() {
           </p>
         </section>
       </main>
-    </>
+    </PageFrame>
   );
 }

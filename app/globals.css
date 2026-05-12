@@ -1,8 +1,11 @@
 :root {
   --header-sticky-offset: 80px;
-  --void: #1b1b21;
+  --void-dark: #1b1b21;
+  --wine-core: #8e0b23;
+  --milk-light: #f2f0ed;
+  --void: var(--void-dark);
   --wine: #8e0b23;
-  --milk: #f2f0ed;
+  --milk: var(--milk-light);
   --surface: var(--void);
   --text: var(--milk);
   --accent: var(--wine);
@@ -12,10 +15,14 @@
 }
 
 :root[data-theme="light"] {
-  --surface: var(--milk);
-  --text: var(--void);
-  --muted: color-mix(in srgb, var(--void) 72%, var(--milk));
-  --line: color-mix(in srgb, var(--void) 16%, transparent);
+  --void: var(--milk-light);
+  --wine: var(--wine-core);
+  --milk: var(--void-dark);
+  --surface: var(--void);
+  --text: var(--milk);
+  --accent: var(--wine);
+  --muted: color-mix(in srgb, var(--milk) 72%, var(--void));
+  --line: color-mix(in srgb, var(--milk) 16%, transparent);
   color-scheme: light;
 }
 

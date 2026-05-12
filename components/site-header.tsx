@@ -11,6 +11,10 @@ function navLinkActive(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname() ?? "";
 
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
     <header className="site-header">
       <div className="page-shell header-inner">
