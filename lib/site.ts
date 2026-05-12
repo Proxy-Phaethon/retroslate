@@ -33,10 +33,11 @@ export const commitmentLinks = [
 ] as const;
 
 export const charityLinks = [
-  { label: "Education Access", href: "/non-profits/education-access" },
-  { label: "Digital Literacy", href: "/non-profits/digital-literacy" },
-  { label: "Climate Action", href: "/non-profits/climate-action" },
-  { label: "Community Care", href: "/non-profits/community-care" },
+  { label: "Animal Welfare", href: "/non-profits/animal-welfare" },
+  { label: "Wildlife Conservation", href: "/non-profits/wildlife-conservation" },
+  { label: "Ocean Protection", href: "/non-profits/ocean-protection" },
+  { label: "Clean Energy", href: "/non-profits/clean-energy" },
+  { label: "Humane Technology", href: "/non-profits/humane-technology" },
 ] as const;
 
 export const socialLinks = [
