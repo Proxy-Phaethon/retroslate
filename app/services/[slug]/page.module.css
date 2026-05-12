@@ -1,0 +1,58 @@
+.page {
+  background: var(--surface);
+  color: var(--text);
+  min-height: calc(100vh - var(--header-sticky-offset));
+  padding: clamp(56px, 8vw, 108px) min(40px, 5vw);
+}
+
+.article {
+  margin: 0 auto;
+  max-width: 820px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+}
+
+.article h1 {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.04;
+  margin: 0 0 28px;
+}
+
+.article p {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  font-weight: 600;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 680px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.actions a {
+  background: var(--accent);
+  border-radius: 4px;
+  color: var(--milk);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 15px 20px;
+}
+
+.actions a:last-child {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}

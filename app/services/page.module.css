@@ -1,246 +1,252 @@
 .servicesPage {
+  --services-width: min(1120px, calc(100% - 64px));
   background: var(--void);
   color: var(--milk);
   color-scheme: dark;
-  max-width: 100%;
   overflow-x: clip;
 }
 
 .intro {
-  min-height: auto;
-  display: flex;
-  align-items: center;
-  padding: 40px min(40px, 5vw) 56px;
+  padding: clamp(34px, 4vw, 54px) 0 clamp(62px, 7vw, 92px);
+}
+
+.introInner,
+.gridInner {
+  margin: 0 auto;
+  width: var(--services-width);
 }
 
 .introInner {
-  width: min(1120px, 100%);
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: clamp(40px, 7vh, 72px);
+  gap: 28px;
 }
 
 .introHead {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px 32px;
   align-items: start;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) auto;
 }
 
 .introHead h1 {
   color: var(--wine);
-  font-size: clamp(1.85rem, 3.8vw, 3rem);
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.18;
   margin: 0;
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .introArrow {
   color: var(--milk);
-  width: clamp(72px, 12vw, 120px);
-  flex-shrink: 0;
   justify-self: end;
+  margin-top: -8px;
+  width: clamp(72px, 9vw, 110px);
 }
 
 .introArrow svg {
   display: block;
-  width: 100%;
   height: auto;
+  width: 100%;
 }
 
 .infoGrid {
   display: grid;
-  gap: 32px 40px;
+  gap: 10px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.infoCol {
+  border: 1px solid var(--wine);
+  min-height: 230px;
+  padding: 20px 22px;
+}
+
 .infoCol h2 {
-  color: var(--wine);
-  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  color: color-mix(in srgb, var(--milk) 86%, var(--void));
+  font-size: clamp(0.95rem, 1.25vw, 1.12rem);
   font-weight: 700;
-  line-height: 1.25;
-  margin: 0 0 18px;
+  line-height: 1.2;
+  margin: 0 0 20px;
 }
 
-.stepList {
-  list-style: decimal;
-  margin: 0;
-  padding-left: 1.35em;
-  color: color-mix(in srgb, var(--milk) 90%, var(--void));
-  font-size: clamp(0.86rem, 1.15vw, 0.98rem);
-  font-weight: 600;
-  line-height: 1.45;
-}
-
-.stepList li {
-  margin: 0 0 8px;
-  padding-left: 0.2em;
-}
-
+.stepList,
 .valueList {
-  list-style: disc;
+  color: color-mix(in srgb, var(--milk) 84%, var(--void));
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  font-weight: 700;
+  line-height: 1.28;
   margin: 0;
-  padding-left: 1.25em;
-  color: color-mix(in srgb, var(--milk) 90%, var(--void));
-  font-size: clamp(0.86rem, 1.15vw, 0.98rem);
-  font-weight: 600;
-  line-height: 1.45;
+  padding-left: 1.3em;
 }
 
+.stepList li,
 .valueList li {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
+  padding-left: 0.1em;
 }
 
 .infoProse {
-  color: color-mix(in srgb, var(--milk) 88%, var(--void));
-  font-size: clamp(0.86rem, 1.15vw, 0.98rem);
-  font-weight: 600;
-  line-height: 1.5;
+  color: color-mix(in srgb, var(--milk) 84%, var(--void));
+  font-size: clamp(0.82rem, 1.04vw, 0.96rem);
+  font-weight: 700;
+  line-height: 1.32;
   margin: 0;
 }
 
 .gridSection {
-  min-height: auto;
-  display: flex;
-  align-items: center;
-  padding: 48px min(40px, 5vw);
-}
-
-.gridInner {
-  width: min(1120px, 100%);
-  margin: 0 auto;
+  padding: 0 0 clamp(86px, 10vw, 132px);
 }
 
 .cardGrid {
   display: grid;
-  gap: 18px;
+  gap: clamp(52px, 7vw, 86px) 28px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.card {
-  padding: 26px 24px 28px;
-  min-height: 200px;
+.cardGrid li {
+  min-width: 0;
+}
+
+.cardLink {
+  border-radius: 0;
+  color: inherit;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  min-height: clamp(520px, 49vw, 590px);
+  padding: clamp(54px, 5vw, 78px) clamp(36px, 4vw, 56px);
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
-.cardRounded {
-  border-radius: 14px;
+.cardRounded,
+.cardOutlined {
+  border-radius: 34px;
 }
 
-.card--dark {
+.cardOutlined {
+  border: 1px solid var(--wine);
+}
+
+.cardLink:hover {
+  box-shadow: 0 18px 38px color-mix(in srgb, black 22%, transparent);
+  transform: translateY(-8px);
+}
+
+.cardLink:focus-visible {
+  outline: 3px solid var(--milk);
+  outline-offset: 6px;
+}
+
+.cardLink--dark {
   background: var(--void);
-  outline: 1px solid color-mix(in srgb, var(--milk) 22%, transparent);
-  outline-offset: -1px;
+  color: var(--milk);
 }
 
-.card--wine {
+.cardLink--wine {
   background: var(--wine);
+  border: 3px solid color-mix(in srgb, var(--milk) 88%, var(--wine));
+  color: var(--milk);
 }
 
-.card--milk {
+.cardLink--milk {
   background: var(--milk);
   color: var(--void);
 }
 
-.cardTitle {
-  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+.cardLink h3 {
+  font-size: clamp(1.8rem, 3vw, 2.55rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  max-width: 470px;
+}
+
+.cardLink p {
+  font-size: clamp(0.88rem, 1.22vw, 1.08rem);
   font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
+  line-height: 1.08;
+  margin: 0 0 26px;
+  max-width: 480px;
+  text-align: justify;
 }
 
-.card--dark .cardTitle,
-.card--wine .cardTitle {
-  color: var(--milk);
-}
-
-.card--milk .cardTitle {
-  color: var(--void);
-}
-
-.cardTitleWine {
-  composes: cardTitle;
-  color: var(--wine);
-}
-
-.cardList {
-  list-style: disc;
-  margin: 0;
-  padding-left: 1.2em;
-  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
-  font-weight: 600;
-  line-height: 1.45;
-}
-
-.card--dark .cardList,
-.card--wine .cardList {
-  color: color-mix(in srgb, var(--milk) 88%, var(--void));
-}
-
-.card--milk .cardList {
-  color: color-mix(in srgb, var(--void) 88%, var(--milk));
-}
-
-.cardList li {
+.cardLink h4 {
+  font-size: clamp(1.05rem, 1.65vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.1;
   margin: 0 0 6px;
 }
 
+.cardList {
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.02;
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.cardList li {
+  margin: 0;
+  padding-left: 0.05em;
+}
+
 .cta {
-  min-height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px min(40px, 5vw);
+  padding: 0 0 clamp(90px, 12vw, 150px);
   text-align: center;
 }
 
 .ctaInner {
-  max-width: 640px;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 28px;
+  margin: 0 auto;
+  max-width: 920px;
+  width: var(--services-width);
 }
 
 .ctaInner h2 {
   color: var(--milk);
-  font-size: clamp(2rem, 4.2vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.08;
-  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0 0 26px;
 }
 
 .ctaInner p {
   color: color-mix(in srgb, var(--milk) 88%, var(--void));
-  font-size: clamp(0.98rem, 1.45vw, 1.12rem);
-  font-weight: 600;
-  line-height: 1.45;
+  font-size: clamp(1rem, 1.6vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.28;
   margin: 0;
-  max-width: 520px;
+  max-width: 760px;
 }
 
 .ctaButtons {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: clamp(42px, 8vw, 112px);
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 18px;
 }
 
 .button {
   background: var(--wine);
   border-radius: 4px;
   color: var(--milk);
-  font-size: 1.02rem;
+  font-size: 0.92rem;
   font-weight: 700;
   line-height: 1;
+  min-width: 170px;
   padding: 16px 22px;
 }
 
@@ -249,19 +255,45 @@
 }
 
 @media (max-width: 900px) {
-  .introHead {
+  .servicesPage {
+    --services-width: min(100% - 40px, 720px);
+  }
+
+  .introHead,
+  .infoGrid,
+  .cardGrid {
     grid-template-columns: 1fr;
   }
 
   .introArrow {
     justify-self: end;
+    margin-top: 0;
   }
 
-  .infoGrid {
-    grid-template-columns: 1fr;
+  .infoCol {
+    min-height: auto;
   }
 
   .cardGrid {
-    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cardLink {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .servicesPage {
+    --services-width: min(100% - 32px, 480px);
+  }
+
+  .cardLink {
+    border-radius: 24px;
+    padding: 34px 28px;
+  }
+
+  .ctaButtons {
+    gap: 14px;
   }
 }
