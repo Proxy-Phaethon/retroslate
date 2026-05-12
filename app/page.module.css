@@ -180,7 +180,9 @@
   justify-self: end;
   min-height: 570px;
   padding: clamp(42px, 5vw, 62px);
-  width: min(560px, 100%);
+  max-width: 550px;
+  width: calc(100% - clamp(26px, 4vw, 52px));
+  margin-right: -10px;
 }
 
 .statsCard p {
