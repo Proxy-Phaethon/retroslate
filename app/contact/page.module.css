@@ -185,3 +185,62 @@
     align-items: flex-start;
   }
 }
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, var(--void) 80%, transparent);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--void);
+  border: 1px solid var(--wine);
+  padding: 40px 36px;
+  max-width: 420px;
+  width: calc(100% - 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--milk);
+}
+
+.modal p {
+  color: color-mix(in srgb, var(--milk) 80%, var(--void));
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal p a {
+  color: var(--wine);
+  text-decoration: underline;
+}
+
+.modal button {
+  align-self: flex-start;
+  margin-top: 8px;
+  background: var(--wine);
+  color: var(--milk);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  filter: brightness(1.08);
+}

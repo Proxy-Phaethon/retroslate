@@ -1,8 +1,38 @@
+"use client";
+
+import { useState } from "react";
 import { PageFrame } from "@/components/page-frame";
 import { company, formRecipientEmail, socialLinks } from "@/lib/site";
 import styles from "./page.module.css";
 
 export default function ContactPage() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(formRecipientEmail)}`, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <PageFrame>
       <main className={styles.contactPage}>
@@ -38,9 +68,8 @@ export default function ContactPage() {
 
         <div className={styles.formColumn}>
           <form
-            action={`https://formsubmit.co/${encodeURIComponent(formRecipientEmail)}`}
+            onSubmit={handleSubmit}
             className={styles.form}
-            method="POST"
           >
             <input type="hidden" name="_subject" value="New Retroslate contact inquiry" />
             <input type="hidden" name="_captcha" value="false" />
@@ -76,7 +105,9 @@ export default function ContactPage() {
               <input name="timeline" type="text" />
             </label>
 
-            <button type="submit">Send Inquiry</button>
+            <button type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Sending…" : "Send Inquiry"}
+            </button>
 
             <p className={styles.disclaimer}>
               Your profile details won&apos;t be shared. Never submit passwords.
@@ -84,6 +115,26 @@ export default function ContactPage() {
           </form>
         </div>
       </main>
+
+      {/* Success modal */}
+      {(status === "success" || status === "error") && (
+        <div className={styles.modalBackdrop} onClick={() => setStatus("idle")}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            {status === "success" ? (
+              <>
+                <h2>Message sent.</h2>
+                <p>Check your inbox for updates — we&apos;ll be in touch shortly.</p>
+              </>
+            ) : (
+              <>
+                <h2>Something went wrong.</h2>
+                <p>Please try again or reach us directly at <a href={`mailto:${company.email}`}>{company.email}</a>.</p>
+              </>
+            )}
+            <button onClick={() => setStatus("idle")}>Close</button>
+          </div>
+        </div>
+      )}
     </PageFrame>
   );
 }
