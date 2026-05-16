@@ -5,6 +5,7 @@ const products = [
   {
     id: "slategeo",
     title: "SlateGEO",
+    href: "https://www.slategeo.com",
     subtitle: "AI visibility analysis for modern businesses.",
     status: "Live",
     description:
@@ -94,7 +95,20 @@ export default function ProductsPage() {
             key={product.id}
           >
             <div className={styles.sectionInner}>
-              <h2 id={`${product.id}-title`}>{product.title}</h2>
+              <h2 id={`${product.id}-title`}>
+                {"href" in product ? (
+                  <a
+                    className={styles.productTitleLink}
+                    href={product.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {product.title}
+                  </a>
+                ) : (
+                  product.title
+                )}
+              </h2>
               <p className={styles.subtitle}>{product.subtitle}</p>
               <p className={styles.tagline}>{product.status}</p>
               <div className={styles.productBox}>

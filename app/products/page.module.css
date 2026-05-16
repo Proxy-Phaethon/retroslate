@@ -68,6 +68,22 @@
   text-align: center;
 }
 
+.productTitleLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.productTitleLink:hover,
+.productTitleLink:focus-visible {
+  color: var(--wine);
+}
+
+.productTitleLink:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 6px;
+}
+
 .subtitle {
   color: color-mix(in srgb, var(--milk) 88%, var(--void));
   font-size: clamp(0.95rem, 1.4vw, 1.08rem);
