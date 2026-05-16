@@ -51,7 +51,7 @@ export const socialLinks = [
   },
   {
     label: "GitHub",
-    href: "https://github.com/Proxy-Phaethon",
+    href: "https://github.com/retroslateco",
   },
 ] as const;
 
@@ -65,7 +65,7 @@ export const navItems = [
 
 export const teamMembers = [
   {
-    name: "Ziah Awwa",
+    name: "Zia Hawwa",
     handle: "ziahawwa",
     role: "Founder",
     href: "/ziahawwa",
