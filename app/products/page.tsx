@@ -1,170 +1,128 @@
-import Link from "next/link";
 import { PageFrame } from "@/components/page-frame";
 import styles from "./page.module.css";
+
+const products = [
+  {
+    id: "slategeo",
+    title: "SlateGEO",
+    subtitle: "AI visibility analysis for modern businesses.",
+    status: "Live",
+    description:
+      "SlateGEO helps businesses understand how effectively AI systems can interpret, trust, summarize, and recommend their websites. It combines GEO scoring, AI readability analysis, recommendation readiness, and multi-model evaluation into one dashboard.",
+    features: [
+      "GEO scoring system",
+      "AI readability analysis",
+      "Recommendation readiness",
+      "Multi-model interpretation",
+      "Website scan reports",
+      "Actionable optimization suggestions",
+    ],
+    idealFor: [
+      "Startups",
+      "Agencies",
+      "Businesses",
+      "SaaS platforms",
+      "Personal brands",
+    ],
+  },
+  {
+    id: "rearview",
+    title: "RearView",
+    subtitle: "Cross-platform workflows, simplified.",
+    status: "In Development",
+    description:
+      "RearView is an open-source productivity utility focused on seamless interoperability between operating systems and devices. The goal is to simplify multi-device workflows and reduce friction between ecosystems.",
+    features: [
+      "Cross-platform workflows",
+      "Multi-device utility tools",
+      "OS interoperability",
+      "Productivity-focused systems",
+      "Lightweight performance",
+      "Open-source ecosystem",
+    ],
+    idealFor: [
+      "Developers",
+      "Remote workers",
+      "Power users",
+      "Multi-device users",
+      "Productivity enthusiasts",
+    ],
+  },
+  {
+    id: "retroslateco",
+    title: "RetroSlateCo",
+    subtitle: "Technology with purpose.",
+    status: "Active Initiative",
+    description:
+      "RetroSlateCo is the mission-driven branch of RetroSlate focused on animal welfare, environmental awareness, humane technology, and long-term sustainability initiatives.",
+    features: [
+      "Animal welfare support",
+      "Rescue and sterilization initiatives",
+      "Environmental awareness",
+      "Humane technology advocacy",
+      "Community-driven support",
+      "Future restoration initiatives",
+    ],
+    idealFor: [
+      "Volunteers",
+      "Animal welfare advocates",
+      "Non-profits",
+      "Environmental initiatives",
+      "Community collaborations",
+    ],
+  },
+] as const;
 
 export default function ProductsPage() {
   return (
     <PageFrame>
-        <main className={styles.productsPage}>
-          <section
-            className={styles.hero}
-            aria-labelledby="products-hero-title"
-          >
-            <div className={styles.heroInner}>
-              <h1 id="products-hero-title">
-                Tools built to solve real problems
-              </h1>
-              <p>
-                Alongside client services, RetroSlate develops products designed to
-                help professionals, businesses, and everyday users work smarter
-                online and offline.
-              </p>
-            </div>
-          </section>
+      <main className={styles.productsPage}>
+        <section className={styles.hero} aria-labelledby="products-hero-title">
+          <div className={styles.heroInner}>
+            <h1 id="products-hero-title">Tools built to solve real problems</h1>
+            <p>
+              RetroSlate builds products and initiatives shaped around AI
+              visibility, cross-platform productivity, and humane technology.
+            </p>
+          </div>
+        </section>
 
+        {products.map((product) => (
           <section
             className={styles.productSection}
-            aria-labelledby="hosting-title"
+            aria-labelledby={`${product.id}-title`}
+            key={product.id}
           >
             <div className={styles.sectionInner}>
-              <h2 id="hosting-title">RetroSlate Hosting</h2>
-              <p className={styles.subtitle}>
-                Professional portfolios online, without the usual barriers.
-              </p>
+              <h2 id={`${product.id}-title`}>{product.title}</h2>
+              <p className={styles.subtitle}>{product.subtitle}</p>
+              <p className={styles.tagline}>{product.status}</p>
               <div className={styles.productBox}>
                 <div className={styles.productCol}>
-                  <h3>Launch Your Portfolio</h3>
-                  <p>
-                    A simple hosting platform that allows users to publish portfolio
-                    websites under the RetroSlate ecosystem.
-                  </p>
+                  <h3>Overview</h3>
+                  <p>{product.description}</p>
                 </div>
                 <div className={styles.productCol}>
+                  <h3>Features</h3>
                   <ul>
-                    <li>Fast hosting</li>
-                    <li>Easy launch process</li>
-                    <li>Mobile-ready layouts</li>
-                    <li>Editable structure</li>
-                    <li>Optional custom portfolio development</li>
+                    {product.features.map((feature) => (
+                      <li key={feature}>{feature}</li>
+                    ))}
                   </ul>
                 </div>
                 <div className={styles.productCol}>
-                  <h3>Examples:</h3>
+                  <h3>Ideal For</h3>
                   <ul>
-                    <li>retroslate.com/username</li>
-                    <li>Custom portfolio pages</li>
-                    <li>Creator-friendly hosting</li>
+                    {product.idealFor.map((audience) => (
+                      <li key={audience}>{audience}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
           </section>
-
-          <section
-            className={styles.productSection}
-            aria-labelledby="rearview-title"
-          >
-            <div className={styles.sectionInner}>
-              <h2 id="rearview-title">Rearview</h2>
-              <p className={styles.subtitle}>
-                Make your second screen feel native.
-              </p>
-              <p className={styles.tagline}>Open-Source Project</p>
-              <div className={styles.productBox}>
-                <div className={styles.productCol}>
-                  <p>
-                    Designed for users who want to extend productivity across
-                    systems without friction. Rearview is an open-source RetroSlate
-                    project focused on seamless dual-monitor connectivity between
-                    macOS and Windows devices.
-                  </p>
-                </div>
-                <div className={styles.productCol}>
-                  <ul>
-                    <li>Mac ↔ Windows display extension</li>
-                    <li>Smooth cross-platform experience</li>
-                    <li>Low-latency connection</li>
-                    <li>Clean setup process</li>
-                    <li>Productivity-first workflow</li>
-                  </ul>
-                </div>
-                <div className={styles.productCol}>
-                  <h3>Ideal For:</h3>
-                  <ul>
-                    <li>Students</li>
-                    <li>Remote workers</li>
-                    <li>Developers</li>
-                    <li>Multi-device users</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section
-            className={styles.productSection}
-            aria-labelledby="slate-title"
-          >
-            <div className={styles.sectionInner}>
-              <h2 id="slate-title">Slate</h2>
-              <p className={styles.subtitle}>
-                Your identity essentials, in one place.
-              </p>
-              <p className={styles.tagline}>In Development</p>
-              <div className={styles.productBox}>
-                <div className={styles.productCol}>
-                  <p>
-                    Instead of managing multiple apps, wallets, and sign-up
-                    systems, Slate aims to simplify access through secure
-                    authentication and biometrics. Slate is a secure mobile app
-                    designed to centralize everyday essentials such as documents,
-                    IDs, cards, and personal credentials in one protected space.
-                  </p>
-                </div>
-                <div className={styles.productCol}>
-                  <ul>
-                    <li>Document storage</li>
-                    <li>Card organization</li>
-                    <li>Secure autofill / identity tools</li>
-                    <li>Biometric access</li>
-                    <li>Simplified onboarding flows</li>
-                    <li>Private, user-controlled access</li>
-                  </ul>
-                </div>
-                <div className={styles.productCol}>
-                  <h3>Ideal For:</h3>
-                  <ul>
-                    <li>Professionals</li>
-                    <li>Students</li>
-                    <li>Frequent travelers</li>
-                    <li>Everyday users seeking simplicity</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section
-            className={styles.future}
-            aria-labelledby="future-title"
-          >
-            <div className={styles.sectionInner}>
-              <h2 id="future-title">Future Projects</h2>
-              <p className={styles.subtitle}>Always building what&apos;s next.</p>
-              <p className={styles.tagline}>Stay Tuned</p>
-              <div className={styles.futureBox}>
-                <p>
-                  RetroSlate continues to explore software, utilities, and
-                  practical digital products shaped by real-world user frustrations
-                  and unmet needs.
-                </p>
-                <Link className={styles.joinButton} href="/contact">
-                  Join Us
-                </Link>
-              </div>
-            </div>
-          </section>
-        </main>
+        ))}
+      </main>
     </PageFrame>
   );
 }

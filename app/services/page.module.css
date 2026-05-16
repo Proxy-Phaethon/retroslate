@@ -101,8 +101,8 @@
 
 .cardGrid {
   display: grid;
-  gap: clamp(52px, 7vw, 86px) 28px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  grid-template-columns: 1fr;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -112,91 +112,198 @@
   min-width: 0;
 }
 
-.cardLink {
-  border-radius: 0;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  min-height: clamp(520px, 49vw, 590px);
-  padding: clamp(54px, 5vw, 78px) clamp(36px, 4vw, 56px);
-  text-decoration: none;
+.serviceCard {
+  background: color-mix(in srgb, var(--void) 94%, black);
+  border: 1px solid var(--wine);
+  color: var(--milk);
+  overflow: clip;
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease,
     transform 180ms ease;
 }
 
-.cardRounded,
-.cardOutlined {
-  border-radius: 34px;
-}
-
-.cardOutlined {
-  border: 1px solid var(--wine);
-}
-
-.cardLink:hover {
+.serviceCard:hover,
+.serviceCardExpanded {
+  border-color: color-mix(in srgb, var(--wine) 70%, var(--milk));
   box-shadow: 0 18px 38px color-mix(in srgb, black 22%, transparent);
-  transform: translateY(-8px);
 }
 
-.cardLink:focus-visible {
+.serviceCard:hover {
+  transform: translateY(-3px);
+}
+
+.cardToggle {
+  align-items: end;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  gap: 10px 42px;
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1fr) auto;
+  padding: clamp(28px, 4vw, 46px);
+  text-align: left;
+  width: 100%;
+}
+
+.cardToggle:focus-visible {
   outline: 3px solid var(--milk);
-  outline-offset: 6px;
+  outline-offset: -8px;
 }
 
-.cardLink--dark {
-  background: var(--void);
-  color: var(--milk);
-}
-
-.cardLink--wine {
-  background: var(--wine);
-  border: 3px solid color-mix(in srgb, var(--milk) 88%, var(--wine));
-  color: var(--milk);
-}
-
-.cardLink--milk {
-  background: var(--milk);
-  color: var(--void);
-}
-
-.cardLink h3 {
-  font-size: clamp(1.8rem, 3vw, 2.55rem);
-  font-weight: 400;
-  line-height: 1.05;
-  margin: 0 0 16px;
-  max-width: 470px;
-}
-
-.cardLink p {
-  font-size: clamp(0.88rem, 1.22vw, 1.08rem);
+.cardKicker {
+  color: var(--wine);
+  font-size: 0.78rem;
   font-weight: 700;
-  line-height: 1.08;
-  margin: 0 0 26px;
-  max-width: 480px;
-  text-align: justify;
+  grid-column: 1 / -1;
+  letter-spacing: 0;
 }
 
-.cardLink h4 {
-  font-size: clamp(1.05rem, 1.65vw, 1.45rem);
-  font-weight: 400;
-  line-height: 1.1;
-  margin: 0 0 6px;
-}
-
-.cardList {
-  font-size: clamp(1rem, 1.6vw, 1.35rem);
+.cardTitle {
+  color: var(--milk);
+  font-size: clamp(1.75rem, 3.2vw, 3rem);
   font-weight: 400;
   line-height: 1.02;
+}
+
+.cardSubtitle {
+  color: color-mix(in srgb, var(--milk) 84%, var(--void));
+  font-size: clamp(0.9rem, 1.16vw, 1.04rem);
+  font-weight: 700;
+  line-height: 1.32;
+  max-width: 560px;
+}
+
+.cardPrice {
+  border-left: 1px solid var(--wine);
+  color: var(--milk);
+  font-size: clamp(0.92rem, 1.18vw, 1.04rem);
+  font-weight: 700;
+  line-height: 1.2;
+  padding-left: 24px;
+}
+
+.cardIndicator {
+  align-items: center;
+  align-self: center;
+  border: 1px solid var(--wine);
+  color: var(--milk);
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 400;
+  height: 42px;
+  justify-content: center;
+  line-height: 1;
+  width: 42px;
+}
+
+.cardPanel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms ease;
+}
+
+.serviceCardExpanded .cardPanel {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.baseBlock {
+  border-top: 1px solid var(--wine);
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+}
+
+.baseBlock > div {
+  padding: clamp(22px, 3vw, 34px) clamp(28px, 4vw, 46px);
+}
+
+.baseBlock > div + div {
+  border-left: 1px solid var(--wine);
+}
+
+.baseBlock h4,
+.featureGroup h4 {
+  color: var(--wine);
+  font-size: clamp(0.88rem, 1vw, 0.98rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.baseBlock p {
+  color: var(--milk);
+  font-size: clamp(1rem, 1.4vw, 1.22rem);
+  font-weight: 700;
+  line-height: 1.24;
+  margin: 0 0 8px;
+}
+
+.includeList,
+.priceList {
+  color: color-mix(in srgb, var(--milk) 86%, var(--void));
+  font-size: clamp(0.86rem, 1.05vw, 0.96rem);
+  font-weight: 700;
+  line-height: 1.42;
   list-style: disc;
   margin: 0;
   padding-left: 1.2em;
 }
 
-.cardList li {
-  margin: 0;
-  padding-left: 0.05em;
+.includeList {
+  columns: 2;
+  column-gap: 34px;
+}
+
+.includeList li,
+.priceList li {
+  margin: 0 0 8px;
+}
+
+.featureGrid {
+  border-top: 1px solid var(--wine);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.featureGroup {
+  border-bottom: 1px solid var(--wine);
+  min-width: 0;
+  padding: clamp(22px, 3vw, 34px) clamp(28px, 4vw, 46px);
+}
+
+.featureGroup:nth-child(odd) {
+  border-right: 1px solid var(--wine);
+}
+
+.featureGroup:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.priceList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.priceList li {
+  align-items: baseline;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.priceList strong {
+  color: var(--milk);
+  font-size: 0.95em;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .cta {
@@ -260,8 +367,7 @@
   }
 
   .introHead,
-  .infoGrid,
-  .cardGrid {
+  .infoGrid {
     grid-template-columns: 1fr;
   }
 
@@ -274,12 +380,49 @@
     min-height: auto;
   }
 
-  .cardGrid {
-    gap: 28px;
+  .cardToggle {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
-  .cardLink {
-    min-height: auto;
+  .cardSubtitle,
+  .cardPrice {
+    grid-column: 1 / -1;
+  }
+
+  .cardPrice {
+    border-left: 0;
+    border-top: 1px solid var(--wine);
+    padding-left: 0;
+    padding-top: 14px;
+  }
+
+  .cardIndicator {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .baseBlock,
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .baseBlock > div + div,
+  .featureGroup:nth-child(odd) {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .baseBlock > div + div {
+    border-top: 1px solid var(--wine);
+  }
+
+  .featureGroup:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--wine);
+  }
+
+  .featureGroup:last-child {
+    border-bottom: 0;
   }
 }
 
@@ -288,9 +431,23 @@
     --services-width: min(100% - 32px, 480px);
   }
 
-  .cardLink {
-    border-radius: 24px;
-    padding: 34px 28px;
+  .cardToggle,
+  .baseBlock > div,
+  .featureGroup {
+    padding: 26px 22px;
+  }
+
+  .includeList {
+    columns: 1;
+  }
+
+  .priceList li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .priceList strong {
+    white-space: normal;
   }
 
   .ctaButtons {
